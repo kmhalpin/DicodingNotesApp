@@ -1,4 +1,4 @@
-const nanoid = require('nanoid');
+const { nanoid } = require('nanoid');
 
 /**
  * @typedef Note
@@ -14,9 +14,9 @@ const notes = require('./notes');
  * @type {import('@hapi/hapi').Lifecycle.Method}
  */
 const addNoteHandler = (req, h) => {
-  const { title, tags, body } = req.payload;
+  const { title = 'untitled', tags, body } = req.payload;
 
-  const id = nanoid.nanoid(16);
+  const id = nanoid(16);
   const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
 
