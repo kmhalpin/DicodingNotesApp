@@ -4,7 +4,7 @@ const routes = require('./routes');
 /**
  * Notes Plugin Options
  * @typedef PluginOptions
- * @property {import('../../services/inMemory/NotesService')} service
+ * @property {import('../../services/postgres/NotesService')} service
  * @property {import('../../validator/notes')} validator
  */
 
