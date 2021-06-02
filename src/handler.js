@@ -1,4 +1,13 @@
 const nanoid = require('nanoid');
+
+/**
+ * @typedef Note
+ * @type {import('./notes').Note}
+ */
+
+/**
+ * @type {Note[]}
+ */
 const notes = require('./notes');
 
 /**
@@ -11,6 +20,9 @@ const addNoteHandler = (req, h) => {
   const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
 
+  /**
+   * @type {Note}
+   */
   const newNote = {
     title, tags, body, id, createdAt, updatedAt,
   };
