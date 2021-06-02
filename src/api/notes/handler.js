@@ -21,7 +21,7 @@ class NotesHandler {
    * postNoteHandler
    * @param {import('@hapi/hapi').Request} request
    * @param {import('@hapi/hapi').ResponseToolkit} h
-   * @returns {Promise<import('@hapi/hapi').Lifecycle.ReturnValue>}
+   * @returns {import('@hapi/hapi').Lifecycle.ReturnValue}
    */
   async postNoteHandler(request, h) {
     try {
@@ -62,7 +62,7 @@ class NotesHandler {
 
   /**
    * getNotesHandler
-   * @returns {Promise<import('@hapi/hapi').Lifecycle.ReturnValue>}
+   * @returns {import('@hapi/hapi').Lifecycle.ReturnValue}
    */
   async getNotesHandler() {
     const notes = await this._service.getNotes();
@@ -78,7 +78,7 @@ class NotesHandler {
    * getNoteByIdHandler
    * @param {import('@hapi/hapi').Request} request
    * @param {import('@hapi/hapi').ResponseToolkit} h
-   * @returns {Promise<import('@hapi/hapi').Lifecycle.ReturnValue>}
+   * @returns {import('@hapi/hapi').Lifecycle.ReturnValue}
    */
   async getNoteByIdHandler(request, h) {
     try {
@@ -115,7 +115,7 @@ class NotesHandler {
    * putNoteByIdHandler
    * @param {import('@hapi/hapi').Request} request
    * @param {import('@hapi/hapi').ResponseToolkit} h
-   * @returns {Promise<import('@hapi/hapi').Lifecycle.ReturnValue>}
+   * @returns {import('@hapi/hapi').Lifecycle.ReturnValue}
    */
   async putNoteByIdHandler(request, h) {
     try {
@@ -153,7 +153,7 @@ class NotesHandler {
    * deleteNoteByIdHandler
    * @param {import('@hapi/hapi').Request} request
    * @param {import('@hapi/hapi').ResponseToolkit} h
-   * @returns {Promise<import('@hapi/hapi').Lifecycle.ReturnValue>}
+   * @returns {import('@hapi/hapi').Lifecycle.ReturnValue}
    */
   async deleteNoteByIdHandler(request, h) {
     try {
