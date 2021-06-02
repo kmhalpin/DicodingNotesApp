@@ -1,12 +1,13 @@
 const Hapi = require('@hapi/hapi');
 const notes = require('./api/notes');
 const NotesService = require('./services/inMemory/NotesService');
+const NotesValidator = require('./validator/notes');
 
 (async () => {
   const notesService = new NotesService();
   const server = Hapi.server({
     port: 5000,
-    host: process.env.NODE_ENV !== 'production' ? 'localhost' : 'localhost',
+    host: process.argv[2] !== 'production' ? 'localhost' : 'localhost',
     routes: {
       cors: {
         origin: ['*'],
@@ -18,6 +19,7 @@ const NotesService = require('./services/inMemory/NotesService');
     plugin: notes,
     options: {
       service: notesService,
+      validator: NotesValidator,
     },
   });
 
