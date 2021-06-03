@@ -7,7 +7,7 @@ const { mapDBToModel } = require('../../utils');
 class NotesService {
   constructor() {
     this._pool = new Pool({
-      connectionString: process.env.PGCONNSTRING || undefined,
+      connectionString: process.env.DATABASE_URL || undefined,
     });
   }
 
