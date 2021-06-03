@@ -8,6 +8,7 @@ class NotesService {
   constructor() {
     this._pool = new Pool({
       connectionString: process.env.DATABASE_URL || undefined,
+      ssl: process.env.DATABASE_URL ? true : undefined,
     });
   }
 
