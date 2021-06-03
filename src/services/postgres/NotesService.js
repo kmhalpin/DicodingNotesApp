@@ -6,7 +6,9 @@ const { mapDBToModel } = require('../../utils');
 
 class NotesService {
   constructor() {
-    this._pool = new Pool();
+    this._pool = new Pool({
+      connectionString: process.env.PGCONNSTRING || undefined,
+    });
   }
 
   async addNote({ title, body, tags }) {
