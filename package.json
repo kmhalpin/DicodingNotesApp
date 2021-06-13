@@ -9,7 +9,7 @@
     "start": "node ./src/server.js production",
     "start-prod": "node ./src/server.js production",
     "lint": "eslint ./src",
-    "migrate": "node-pg-migrate"
+    "migrate": "node-pg-migrate --no-reject-unauthorized"
   },
   "keywords": [],
   "author": "",
