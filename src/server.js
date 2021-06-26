@@ -28,7 +28,7 @@ const CollaborationsValidator = require('./validator/collaborations');
 
 // exports
 const _exports = require('./api/exports');
-const ProducerService = require('./services/kafka/ProducerService');
+const ProducerService = require('./services/rabbitmq/ProducerService');
 const ExportsValidator = require('./validator/exports');
 
 // uploads
