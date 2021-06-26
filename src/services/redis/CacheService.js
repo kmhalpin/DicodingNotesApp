@@ -3,10 +3,16 @@ const redis = require('redis');
 
 class CacheService {
   constructor() {
-    const rtg = new URL(process.env.REDISTOGO_URL);
+    const rtg = new URL(process.env.REDIS_TLS_URL);
     this._client = redis.createClient({
       host: rtg.hostname,
       port: rtg.port,
+      db: 0,
+      tls: {
+        rejectUnauthorized: false,
+        requestCert: true,
+        agent: false,
+      },
     });
 
     this._client.auth(rtg.password);
