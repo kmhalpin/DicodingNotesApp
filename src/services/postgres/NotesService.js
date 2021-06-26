@@ -74,7 +74,7 @@ class NotesService {
 
   async getNotes(owner) {
     try {
-      const result = this._cacheService.get(`notes:${owner}`);
+      const result = await this._cacheService.get(`notes:${owner}`);
       return JSON.parse(result);
     } catch (error) {
       const query = {
