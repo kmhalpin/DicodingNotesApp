@@ -1,10 +1,15 @@
+const { URL } = require('url');
 const redis = require('redis');
 
 class CacheService {
   constructor() {
+    const rtg = new URL(process.env.REDISTOGO_URL);
     this._client = redis.createClient({
-      host: process.env.REDIS_SERVER,
+      host: rtg.hostname,
+      port: rtg.port,
     });
+
+    this._client.auth(rtg.password);
 
     this._client.on('error', (error) => {
       console.log(error);
