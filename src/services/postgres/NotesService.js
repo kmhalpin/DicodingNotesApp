@@ -12,7 +12,12 @@ class NotesService {
    * @param {import('../redis/CacheService')} cacheService
    */
   constructor(collaborationService, cacheService) {
-    this._pool = new Pool();
+    this._pool = new Pool({
+      connectionString: process.env.DATABASE_URL || undefined,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    });
     this._collaborationService = collaborationService;
     this._cacheService = cacheService;
   }

@@ -8,7 +8,12 @@ class CollaborationsService {
    * @param {import('../redis/CacheService')} cacheService
    */
   constructor(cacheService) {
-    this._pool = new Pool();
+    this._pool = new Pool({
+      connectionString: process.env.DATABASE_URL || undefined,
+      ssl: {
+        rejectUnauthorized: false,
+      },
+    });
     this._cacheService = cacheService;
   }
 
