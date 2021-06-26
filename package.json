@@ -4,11 +4,12 @@
   "description": "",
   "main": "./src/server.js",
   "scripts": {
+    "start": "node ./src/server.js production",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon ./src/server.js",
     "start-prod": "node ./src/server.js production",
     "lint": "eslint ./src",
-    "migrate": "node-pg-migrate"
+    "migrate": "node-pg-migrate --no-reject-unauthorized"
   },
   "keywords": [],
   "author": "",
